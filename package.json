@@ -1,0 +1,12 @@
+{
+  "name": "elzemiekejanzen-home",
+  "version": "1.0.0",
+  "description": "Startwebsite Elzemieke Janzen — Lichaamsgerichte Therapie",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

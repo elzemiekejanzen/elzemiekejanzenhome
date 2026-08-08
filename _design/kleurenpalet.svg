@@ -1,0 +1,55 @@
+<svg viewBox="0 0 1240 400" xmlns="http://www.w3.org/2000/svg" font-family="'Outfit', system-ui, sans-serif">
+  <rect width="1240" height="400" fill="#F5EDE0"/>
+  <text x="40" y="56" font-size="30" font-weight="600" fill="#251D18">Elzemieke Janzen — Kleurenpalet</text>
+  <text x="40" y="84" font-size="15" fill="#7A6A5A">Lichaamsgerichte therapie · geaard, vol, speels · goud als draad</text>
+
+  <!-- gold thread woven across -->
+  <path d="M 40 132 Q 115 108 190 132 T 340 132 T 490 132 T 640 132 T 790 132 T 940 132 T 1090 132 T 1200 132"
+        fill="none" stroke="#C39A4E" stroke-width="2.5" opacity="0.85"/>
+
+  <!-- swatches -->
+  <g>
+    <!-- 1 aarde -->
+    <rect x="40"   y="150" width="130" height="130" rx="14" fill="#251D18"/>
+    <text x="40"  y="305" font-size="16" font-weight="600" fill="#251D18">--aarde</text>
+    <text x="40"  y="326" font-size="13" fill="#7A6A5A">#251D18 · tekst / donkere secties</text>
+
+    <!-- 2 klei -->
+    <rect x="190"  y="150" width="130" height="130" rx="14" fill="#B14A32"/>
+    <text x="190" y="305" font-size="16" font-weight="600" fill="#251D18">--klei</text>
+    <text x="190" y="326" font-size="13" fill="#7A6A5A">#B14A32 · primair / knoppen</text>
+
+    <!-- 3 vlam -->
+    <rect x="340"  y="150" width="130" height="130" rx="14" fill="#CE7B3C"/>
+    <text x="340" y="305" font-size="16" font-weight="600" fill="#251D18">--vlam</text>
+    <text x="340" y="326" font-size="13" fill="#7A6A5A">#CE7B3C · secundair accent</text>
+
+    <!-- 4 honing -->
+    <rect x="490"  y="150" width="130" height="130" rx="14" fill="#DDA63A"/>
+    <text x="490" y="305" font-size="16" font-weight="600" fill="#251D18">--honing</text>
+    <text x="490" y="326" font-size="13" fill="#7A6A5A">#DDA63A · highlight</text>
+
+    <!-- 5 mos -->
+    <rect x="640"  y="150" width="130" height="130" rx="14" fill="#586F3A"/>
+    <text x="640" y="305" font-size="16" font-weight="600" fill="#251D18">--mos</text>
+    <text x="640" y="326" font-size="13" fill="#7A6A5A">#586F3A · rust / natuur</text>
+
+    <!-- 6 goud -->
+    <rect x="790"  y="150" width="130" height="130" rx="14" fill="#C39A4E"/>
+    <text x="790" y="305" font-size="16" font-weight="600" fill="#251D18">--goud</text>
+    <text x="790" y="326" font-size="13" fill="#7A6A5A">#C39A4E · de draad / hover-glow</text>
+
+    <!-- 7 schelp -->
+    <rect x="940"  y="150" width="130" height="130" rx="14" fill="#EAD9C2" stroke="#E0CBAF" stroke-width="1"/>
+    <text x="940" y="305" font-size="16" font-weight="600" fill="#251D18">--schelp</text>
+    <text x="940" y="326" font-size="13" fill="#7A6A5A">#EAD9C2 · kaarten / secties</text>
+
+    <!-- 8 linnen -->
+    <rect x="1090" y="150" width="130" height="130" rx="14" fill="#F5EDE0" stroke="#E0CBAF" stroke-width="1"/>
+    <text x="1090" y="305" font-size="16" font-weight="600" fill="#251D18">--linnen</text>
+    <text x="1090" y="326" font-size="13" fill="#7A6A5A">#F5EDE0 · achtergrond</text>
+  </g>
+
+  <!-- hover note -->
+  <text x="40" y="372" font-size="13" fill="#7A6A5A">Hover-varianten afgeleid: --klei-diep #8C3825 · --mos-diep #45582C — voor knop-hover en focus.</text>
+</svg>

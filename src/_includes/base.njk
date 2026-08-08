@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title or "Elzemieke Janzen — Connect to Center" }}</title>
+  <meta name="description" content="{{ description or 'Lichaamsgerichte therapie, transformationeel lichaamswerk en systemische coaching. Een veilige bedding waarin je dieper in jezelf kunt zakken en je lijf weer gaat spreken.' }}">
+  <link rel="icon" href="/images/symbool.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Mulish:ital,wght@0,300..800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css?v={% buildTime %}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="bar wrap">
+      <a class="brand" href="/">
+        <img class="brand__mark" src="/images/symbool.svg" alt="" width="40" height="40">
+        <span class="brand__text">
+          <span class="brand__name">Elzemieke Janzen</span>
+          <span class="brand__sub">Connect to Center</span>
+        </span>
+      </a>
+      <input type="checkbox" id="navtoggle" class="navtoggle" hidden>
+      <label for="navtoggle" class="hamburger" aria-label="Menu openen"><span></span><span></span><span></span></label>
+      <nav class="nav" aria-label="Hoofdmenu">
+        <div class="nav__item nav__item--dropdown">
+          <a href="/#aanbod">Aanbod</a>
+          <div class="nav__dropdown">
+            <a href="/#aanbod">Persoonlijke begeleiding</a>
+            <a href="/producten/">Producten</a>
+          </div>
+        </div>
+        <div class="nav__item nav__item--dropdown">
+          <a href="/#over-mij">Over mij</a>
+          <div class="nav__dropdown">
+            <a href="/#over-mij">Wie ik ben</a>
+            <a href="/#methode">Hoe ik werk</a>
+          </div>
+        </div>
+        <a href="/#ervaringen">Klantervaringen</a>
+        <a href="/#samenwerkingen">Samenwerken</a>
+        <a href="/#contact">Contact</a>
+        <a href="/gratis-tools/">Gratis tools</a>
+        <a class="nav__cta" href="/#boeking">Plan een kennismaking</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap foot">
+      <div class="foot__brand">
+        <img src="/images/symbool.svg" alt="" width="48" height="48">
+        <div>
+          <span class="foot__name">Elzemieke Janzen · Connect to Center</span>
+          <p>Lichaamsgerichte therapie, transformationeel lichaamswerk &amp; systemische coaching</p>
+        </div>
+      </div>
+      <div class="foot__contact">
+        <a href="mailto:connect@elzemiekejanzen.com">connect@elzemiekejanzen.com</a>
+        <a href="/#boeking">Plan een kennismaking</a>
+        <a href="/producten/">Producten bekijken</a>
+      </div>
+      <div class="foot__keurmerk">
+        <img src="/images/logo-vbag.png" alt="Aangesloten bij VBAG" height="40">
+      </div>
+    </div>
+    <div class="wrap foot__base">
+      <span>© {% year %} Elzemieke Janzen · Connect to Center</span>
+      <span class="foot__legal">
+        <a href="/voorwaarden/">Algemene voorwaarden</a>
+        <a href="/privacybeleid/">Privacybeleid</a>
+      </span>
+    </div>
+  </footer>
+
+  <div class="cookiebar" id="cookiebar" hidden>
+    <p>Deze site gebruikt analytische cookies om het bezoek te meten. Lees meer in het <a href="/privacybeleid/">privacybeleid</a>.</p>
+    <button class="btn" type="button" id="cookie-ok">Begrepen</button>
+  </div>
+
+  <script>
+    (function () {
+      var GA_ID = "G-5GVEBCQ3YR";
+
+      function loadAnalytics() {
+        if (GA_ID.indexOf("G-XXX") === 0) return; // placeholder: nog geen GA laden
+        var s = document.createElement("script");
+        s.async = true;
+        s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { window.dataLayer.push(arguments); }
+        gtag("js", new Date());
+        gtag("config", GA_ID, { anonymize_ip: true });
+      }
+
+      var bar = document.getElementById("cookiebar");
+      if (localStorage.getItem("cookie-consent") === "granted") {
+        loadAnalytics();
+      } else {
+        bar.hidden = false;
+      }
+      document.getElementById("cookie-ok").addEventListener("click", function () {
+        localStorage.setItem("cookie-consent", "granted");
+        bar.hidden = true;
+        loadAnalytics();
+      });
+    })();
+  </script>
+</body>
+</html>
