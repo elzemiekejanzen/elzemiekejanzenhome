@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ title or "Elzemieke Janzen — Connect to Center" }}</title>
   <meta name="description" content="{{ description or 'Lichaamsgerichte therapie, transformationeel lichaamswerk en systemische coaching. Een veilige bedding waarin je dieper in jezelf kunt zakken en je lijf weer gaat spreken.' }}">
+  {% if noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
+  <link rel="canonical" href="https://elzemiekejanzen.nl{{ page.url }}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Connect to Center">
+  <meta property="og:title" content="{{ title or 'Elzemieke Janzen — Connect to Center' }}">
+  <meta property="og:description" content="{{ description or 'Lichaamsgerichte therapie, transformationeel lichaamswerk en systemische coaching. Een veilige bedding waarin je dieper in jezelf kunt zakken en je lijf weer gaat spreken.' }}">
+  <meta property="og:url" content="https://elzemiekejanzen.nl{{ page.url }}">
+  <meta property="og:image" content="https://elzemiekejanzen.nl/images/hero-sfeerbeeld.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title or 'Elzemieke Janzen — Connect to Center' }}">
+  <meta name="twitter:description" content="{{ description or 'Lichaamsgerichte therapie, transformationeel lichaamswerk en systemische coaching. Een veilige bedding waarin je dieper in jezelf kunt zakken en je lijf weer gaat spreken.' }}">
+  <meta name="twitter:image" content="https://elzemiekejanzen.nl/images/hero-sfeerbeeld.jpg">
   <link rel="icon" href="/images/symbool.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

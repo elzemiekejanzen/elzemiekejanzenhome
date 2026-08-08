@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://elzemiekejanzen.nl/sitemap.xml
