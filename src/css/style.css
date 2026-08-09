@@ -702,6 +702,9 @@ section[id] { scroll-margin-top: 92px; }
 .foot__keurmerk img { height: 40px; width: auto; opacity: 0.9; }
 .foot__contact a { color: var(--honing); }
 .foot__contact a:hover { color: var(--parel); }
+.foot__social { display: flex; align-items: center; gap: 1rem; }
+.foot__social a { color: var(--parel-zacht); display: inline-flex; transition: color 0.2s ease; }
+.foot__social a:hover { color: var(--honing); }
 .foot__base {
   display: flex;
   flex-wrap: wrap;
