@@ -329,7 +329,11 @@ description: "Lichaamsgerichte therapie, transformationeel lichaamswerk en syste
       <h2>Plan een kennismaking</h2>
       <p class="intro">Boek hieronder rechtstreeks een moment dat jou past.</p>
     </div>
-    <div class="calendly-inline-widget" data-url="https://calendly.com/connecttocenter?background_color=f7f0e6&text_color=2a1d17&primary_color=7c2e36" style="min-width:320px;height:700px;"></div>
-    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    <div id="calendly-gate">
+      <div class="calendly-gate__msg" id="calendly-msg">
+        <p>Om je agenda te tonen, plaatst Calendly een eigen cookie. Accepteer de cookiemelding onderaan de pagina om je moment in te plannen.</p>
+      </div>
+      <div class="calendly-inline-widget" data-url="https://calendly.com/connecttocenter?background_color=f7f0e6&text_color=2a1d17&primary_color=7c2e36&hide_gdpr_banner=1" style="min-width:320px;height:700px;" hidden></div>
+    </div>
   </div>
 </section>

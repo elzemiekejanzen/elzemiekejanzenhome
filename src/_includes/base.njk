@@ -122,9 +122,23 @@
         gtag("config", GA_ID, { anonymize_ip: true });
       }
 
+      function loadCalendly() {
+        var widget = document.querySelector(".calendly-inline-widget");
+        if (!widget || widget.dataset.loaded) return;
+        widget.dataset.loaded = "1";
+        widget.hidden = false;
+        var msg = document.getElementById("calendly-msg");
+        if (msg) msg.hidden = true;
+        var s = document.createElement("script");
+        s.src = "https://assets.calendly.com/assets/external/widget.js";
+        s.async = true;
+        document.body.appendChild(s);
+      }
+
       var bar = document.getElementById("cookiebar");
       if (localStorage.getItem("cookie-consent") === "granted") {
         loadAnalytics();
+        loadCalendly();
       } else {
         bar.hidden = false;
       }
@@ -132,6 +146,7 @@
         localStorage.setItem("cookie-consent", "granted");
         bar.hidden = true;
         loadAnalytics();
+        loadCalendly();
       });
     })();
   </script>
