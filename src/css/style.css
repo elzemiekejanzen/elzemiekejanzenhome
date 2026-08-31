@@ -754,6 +754,14 @@ section[id] { scroll-margin-top: 92px; }
 .meta-block p { margin: 0.2rem 0; }
 .meta-block .ph-inline { color: var(--goud); font-style: italic; }
 
+.bedrijven__photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius);
+  margin-bottom: 0.5rem;
+}
 .aanraders__icoon {
   display: block;
   width: 84px;
