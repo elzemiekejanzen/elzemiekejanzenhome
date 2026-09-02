@@ -133,6 +133,24 @@ section[id] { scroll-margin-top: 92px; }
   box-shadow: none;
 }
 
+.hero__choices {
+  margin-top: 1.1rem;
+  display: flex;
+  gap: 0.7rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.hero__choice {
+  background: transparent;
+  color: var(--parel);
+  border: 1px solid rgba(245, 236, 224, 0.45);
+  font-size: 0.9rem;
+}
+.hero__choice:hover {
+  background: rgba(245, 236, 224, 0.1);
+  box-shadow: none;
+}
+
 .section-head { max-width: 660px; margin-bottom: clamp(2rem, 5vw, 3.25rem); }
 .section-head h2 { font-size: clamp(1.9rem, 4.5vw, 2.9rem); }
 .section-head .intro { color: var(--tekst-zacht); font-size: 1.15rem; }
