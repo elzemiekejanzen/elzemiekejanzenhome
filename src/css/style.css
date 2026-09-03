@@ -772,6 +772,57 @@ section[id] { scroll-margin-top: 92px; }
 .meta-block p { margin: 0.2rem 0; }
 .meta-block .ph-inline { color: var(--goud); font-style: italic; }
 
+.zvdv-diagram-frame {
+  background: var(--schemer);
+  border-radius: var(--radius);
+  padding: clamp(1.2rem, 3vw, 2.2rem);
+  margin: 1.6rem 0;
+}
+.zvdv-diagram-frame svg { display: block; width: 100%; height: auto; }
+.zvdv-stage-name { font-family: var(--ff-kop); font-weight: 700; fill: #2A1D17; font-size: 16px; }
+.zvdv-stage-note { fill: rgba(42, 29, 23, 0.66); font-size: 11.5px; }
+.zvdv-caption {
+  margin: 0.9rem 0 1.6rem;
+  font-size: 0.85rem;
+  color: rgba(42, 29, 23, 0.66);
+  text-align: center;
+}
+.zvdv-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+}
+@media (max-width: 600px) {
+  .zvdv-cards { grid-template-columns: 1fr; }
+}
+.zvdv-card {
+  background: var(--schemer);
+  border-radius: calc(var(--radius) - 4px);
+  padding: 1.2rem 1.3rem;
+}
+.zvdv-card__num {
+  font-family: var(--ff-kop);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #A6763B;
+  margin: 0 0 0.3rem;
+}
+.zvdv-card h4 {
+  font-family: var(--ff-kop);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 0.4rem;
+  color: var(--klei);
+}
+.zvdv-card p {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: rgba(42, 29, 23, 0.66);
+  margin: 0;
+}
+
 .bedrijven__photo {
   width: 100%;
   height: auto;
