@@ -104,13 +104,36 @@
   </footer>
 
   <div class="cookiebar" id="cookiebar" hidden>
-    <p>Deze site houdt (net als jij, waarschijnlijk) wel van een beetje zelfreflectie — we gebruiken analytische cookies om te zien wat wel en niet landt. Meer weten? Lees ons <a href="/privacybeleid/">privacybeleid</a>.</p>
-    <button class="btn" type="button" id="cookie-ok">Prima, ga je gang</button>
+    <p>Fijn dat je er bent! Ik gebruik hier alleen de minimale cookies: voor je voorkeuren en om (volledig geanonimiseerd) bij te houden wat wel en niet landt. Verkopen of delen met anderen doe ik niet — jouw gegevens blijven van jou. Meer weten? Lees mijn <a href="/privacybeleid/">privacybeleid</a>.</p>
+
+    <div class="cookiebar__prefs" id="cookie-prefs" hidden>
+      <div class="cookiebar__pref">
+        <span><strong>Noodzakelijk</strong> — nodig om de site te laten werken.</span>
+        <span class="cookiebar__locked">Altijd aan</span>
+      </div>
+      <label class="cookiebar__pref cookiebar__pref--toggle">
+        <span><strong>Statistieken</strong> — Google Analytics, volledig geanonimiseerd.</span>
+        <input type="checkbox" id="pref-analytics">
+      </label>
+      <label class="cookiebar__pref cookiebar__pref--toggle">
+        <span><strong>Boekingswidget</strong> — Calendly, om direct op de site een afspraak te plannen.</span>
+        <input type="checkbox" id="pref-calendly">
+      </label>
+    </div>
+
+    <div class="cookiebar__actions" id="cookie-actions-main">
+      <button class="btn" type="button" id="cookie-accept-all">Accepteren</button>
+      <button class="btn btn--ghost" type="button" id="cookie-customize">Zelf instellen</button>
+    </div>
+    <div class="cookiebar__actions" id="cookie-actions-prefs" hidden>
+      <button class="btn" type="button" id="cookie-save-prefs">Voorkeuren opslaan</button>
+    </div>
   </div>
 
   <script>
     (function () {
       var GA_ID = "G-5GVEBCQ3YR";
+      var STORAGE_KEY = "cookie-prefs";
 
       function loadAnalytics() {
         if (GA_ID.indexOf("G-XXX") === 0) return; // placeholder: nog geen GA laden
@@ -137,18 +160,56 @@
         document.body.appendChild(s);
       }
 
+      function applyPrefs(prefs) {
+        if (prefs.analytics) loadAnalytics();
+        if (prefs.calendly) loadCalendly();
+      }
+
+      function getStoredPrefs() {
+        try {
+          var raw = localStorage.getItem(STORAGE_KEY);
+          if (raw) return JSON.parse(raw);
+        } catch (e) {}
+        if (localStorage.getItem("cookie-consent") === "granted") {
+          return { analytics: true, calendly: true }; // migratie oude alles-of-niets keuze
+        }
+        return null;
+      }
+
+      function savePrefs(prefs) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(prefs));
+      }
+
       var bar = document.getElementById("cookiebar");
-      if (localStorage.getItem("cookie-consent") === "granted") {
-        loadAnalytics();
-        loadCalendly();
+      var stored = getStoredPrefs();
+
+      if (stored) {
+        applyPrefs(stored);
       } else {
         bar.hidden = false;
       }
-      document.getElementById("cookie-ok").addEventListener("click", function () {
-        localStorage.setItem("cookie-consent", "granted");
+
+      document.getElementById("cookie-accept-all").addEventListener("click", function () {
+        var prefs = { analytics: true, calendly: true };
+        savePrefs(prefs);
+        applyPrefs(prefs);
         bar.hidden = true;
-        loadAnalytics();
-        loadCalendly();
+      });
+
+      document.getElementById("cookie-customize").addEventListener("click", function () {
+        document.getElementById("cookie-prefs").hidden = false;
+        document.getElementById("cookie-actions-main").hidden = true;
+        document.getElementById("cookie-actions-prefs").hidden = false;
+      });
+
+      document.getElementById("cookie-save-prefs").addEventListener("click", function () {
+        var prefs = {
+          analytics: document.getElementById("pref-analytics").checked,
+          calendly: document.getElementById("pref-calendly").checked
+        };
+        savePrefs(prefs);
+        applyPrefs(prefs);
+        bar.hidden = true;
       });
     })();
   </script>
