@@ -1,23 +1,23 @@
 /* ===========================================================
-   Elzemieke Janzen — Lichaamsgerichte Therapie
+   Elzemieke Janzen - Lichaamsgerichte Therapie
    Donkere, geborgen bedding · goud als draad · volle kleuren
    Koppen: Bricolage Grotesque · Tekst: Mulish
    =========================================================== */
 
 :root {
-  /* kleurtokens — velvet/premium palet: zacht wit/crème als basis, bordeaux/mos/goud als accent */
-  --aarde:      #F7F0E6;  /* basisbedding — zacht, warm petal-wit */
-  --schemer:    #EFE1D2;  /* verhoogd vlak / kaart — iets dieper crème */
+  /* kleurtokens - velvet/premium palet: zacht wit/crème als basis, bordeaux/mos/goud als accent */
+  --aarde:      #F7F0E6;  /* basisbedding - zacht, warm petal-wit */
+  --schemer:    #EFE1D2;  /* verhoogd vlak / kaart - iets dieper crème */
   --schemer-2:  #E6D3C0;  /* kaart-hover / dieper */
-  --klei:       #7C2E36;  /* primair accent / knoppen — zachte bordeaux (velvet rood) */
-  --klei-diep:  #5B2027;  /* knop-hover — dieper bordeaux */
-  --vlam:       #A6444B;  /* secundair accent — rozig bordeaux, tussen klei en goud */
-  --honing:     #B9863E;  /* highlight — warm goud, met genoeg contrast op licht */
-  --mos:        #3C5342;  /* rust / natuur — velvet donkergroen */
+  --klei:       #7C2E36;  /* primair accent / knoppen - zachte bordeaux (velvet rood) */
+  --klei-diep:  #5B2027;  /* knop-hover - dieper bordeaux */
+  --vlam:       #A6444B;  /* secundair accent - rozig bordeaux, tussen klei en goud */
+  --honing:     #B9863E;  /* highlight - warm goud, met genoeg contrast op licht */
+  --mos:        #3C5342;  /* rust / natuur - velvet donkergroen */
   --mos-diep:   #293A2E;
-  --goud:       #A6763B;  /* de draad / details / hover-glow — mat goud, leesbaar op licht */
+  --goud:       #A6763B;  /* de draad / details / hover-glow - mat goud, leesbaar op licht */
   --schelp:     #E6D3C0;
-  --linnen:     #2A1D17;  /* koppen — diep, warm zwartbruin op de lichte bedding */
+  --linnen:     #2A1D17;  /* koppen - diep, warm zwartbruin op de lichte bedding */
 
   /* tekst op licht */
   --tekst:      #2A1D17;
@@ -29,7 +29,7 @@
   --parel:      #F5ECE0;  /* lichte tekst op het donkere kader */
   --parel-zacht: rgba(245, 236, 224, 0.72);
 
-  /* terracotta — het donkere accent voor een paar uitgekozen tekstvakken (hero, manifest, methode) */
+  /* terracotta - het donkere accent voor een paar uitgekozen tekstvakken (hero, manifest, methode) */
   --terracotta:      #8B4226;
   --terracotta-diep: #6E341D;
   --goud-licht:      #E0B872; /* helder goud, voor voldoende contrast op het donkere terracotta-vak */
@@ -206,7 +206,7 @@ section[id] { scroll-margin-top: 92px; }
 .overmij__photo--links { object-position: 85% center; }
 
 /* ===========================================================
-   DONKER-VAK — terracotta accentblokken (hero, manifest, methode)
+   DONKER-VAK - terracotta accentblokken (hero, manifest, methode)
    =========================================================== */
 .donker-vak {
   /* alle tekstkleuren die elders naar de lichte bedding wijzen, wijzen hierbinnen naar de lichte tint op donker */
@@ -863,7 +863,7 @@ section[id] { scroll-margin-top: 92px; }
 }
 
 /* ===========================================================
-   VERHAAL (Over mij — volledige pagina)
+   VERHAAL (Over mij - volledige pagina)
    =========================================================== */
 .verhaal__inner { max-width: 640px; margin-inline: auto; }
 .verhaal h2 { clear: both; }
