@@ -1,37 +1,72 @@
 ---
 layout: base.njk
 title: "Agenda - Elzemieke Janzen"
-description: "Wat er aankomt: het groepstraject vanaf februari 2027, en binnenkort een dag en een weekend."
+description: "Wat ik begeleid: losse yogasessies, mini-retraites en trajecten, met data en locaties."
 ---
 
 <section class="page-head wrap">
   <p class="eyebrow" style="justify-content:center">Agenda</p>
-  <h1>Wat er aankomt</h1>
-  <p class="sub">Naast 1-op-1 begeleiding komt er meer, in groepsvorm en als verdieping. Hier zie je wat er gepland staat.</p>
+  <h1>Agenda</h1>
+  <p class="sub">Wat ik begeleid, van losse yogasessies tot mini-retraites en trajecten. Kies wat je zoekt.</p>
 </section>
 
 <section class="section">
-  <div class="wrap">
-    <div class="cards">
-      <article class="card">
-        <span class="tagline">Start februari 2027</span>
-        <h3>Groepstraject</h3>
-        <p>Zes maanden in een kleine groep, met live dagen, 1-op-1 sessies en masterclasses.</p>
-        <p style="margin-top:1em"><a href="/groepstraject/">Lees meer →</a></p>
-      </article>
-      <article class="card">
-        <span class="tagline">Binnenkort</span>
-        <h3>Een dag en een weekend</h3>
-        <p>Er komen ook een dag en een weekend om samen te verdiepen. Zodra de data bekend zijn, vind je ze hier.</p>
-        <p style="margin-top:1em"><a href="/#boeking">Plan een gratis kennismaking →</a></p>
-      </article>
-      <article class="card">
-        <span class="tagline">Beschikbaar half oktober</span>
-        <h3>Audio's om zelf mee aan de slag te gaan</h3>
-        <p>Praktische audio's om in je eigen tempo mee te werken.</p>
-        <p style="margin-top:1em"><a href="/producten/">Bekijk de producten →</a></p>
-      </article>
+  <div class="wrap agenda">
+    <div class="agenda__filters" role="group" aria-label="Filter de agenda">
+      <button type="button" class="agenda__chip is-active" data-filter="alles">Alles</button>
+      <button type="button" class="agenda__chip" data-filter="sessie">Losse sessies</button>
+      <button type="button" class="agenda__chip" data-filter="retraite">Mini-retraites</button>
+      <button type="button" class="agenda__chip" data-filter="traject">Trajecten</button>
     </div>
-    <p style="text-align:center; margin-top:2.5rem"><a href="/traject/">Of bekijk het 1-op-1 traject van zes maanden →</a></p>
+    <p class="agenda__uitleg" id="agenda-uitleg">Alles bij elkaar, op datum.</p>
+
+    <div class="agenda__lijst">
+      {% for item in agenda %}
+      <article class="agenda-rij" data-type="{{ item.type }}"{% if item.datum %} data-datum="{{ item.datum }}"{% endif %}>
+        <div class="agenda-rij__datum">
+          {% if item.datum %}
+          <b>{{ item.dag }}</b><span>{{ item.maand }}</span>
+          {% else %}
+          <span class="agenda-rij__wanneer">{{ item.wanneer }}</span>
+          {% endif %}
+        </div>
+        <div class="agenda-rij__tekst">
+          <span class="agenda-rij__label agenda-rij__label--{{ item.type }}">{% if item.label %}{{ item.label }}{% elif item.type == "sessie" %}Losse sessie{% elif item.type == "retraite" %}Mini-retraite{% else %}Traject{% endif %}</span>
+          <h3>{{ item.titel }}</h3>
+          <p class="agenda-rij__meta">{% if item.datum %}{{ item.weekdag }} {{ item.dag }} {{ item.maand }} · {% if item.tijd %}{{ item.tijd }} · {% endif %}{% endif %}{{ item.plek }}{% if item.tarief %} · {{ item.tarief }}{% endif %}{% if item.beschikbaarheid %} · {{ item.beschikbaarheid }}{% endif %}</p>
+          <p>{{ item.omschrijving }}</p>
+        </div>
+        <a class="agenda-rij__link" href="{{ item.link }}"{% if item.extern %} target="_blank" rel="noopener"{% endif %}>{{ item.linkTekst }} →</a>
+      </article>
+      {% endfor %}
+    </div>
+
+    <p style="text-align:center; margin-top:2.5rem"><a href="/producten/">Liever eerst zelf aan de slag? Bekijk de audio's →</a></p>
   </div>
 </section>
+
+<script>
+(function () {
+  var uitleg = {
+    alles: "Alles bij elkaar, op datum.",
+    sessie: "Losse sessies en praktijkdagen: voor een enkele keer, zonder verplichting voor daarna.",
+    retraite: "Mini-retraites: een weekend bij Nala Village, met workshops rond een thema. Je boekt zelf je verblijf.",
+    traject: "Trajecten: begeleiding van zes maanden, die begint met een gratis kennismaking."
+  };
+  var vandaag = new Date();
+  var iso = vandaag.getFullYear() + "-" + String(vandaag.getMonth() + 1).padStart(2, "0") + "-" + String(vandaag.getDate()).padStart(2, "0");
+  var rijen = document.querySelectorAll(".agenda-rij");
+  rijen.forEach(function (r) { if (r.dataset.datum && r.dataset.datum < iso) r.remove(); });
+  var chips = document.querySelectorAll(".agenda__chip");
+  chips.forEach(function (chip) {
+    chip.addEventListener("click", function () {
+      var f = chip.dataset.filter;
+      chips.forEach(function (c) { c.classList.toggle("is-active", c === chip); });
+      document.querySelectorAll(".agenda-rij").forEach(function (r) {
+        r.hidden = !(f === "alles" || r.dataset.type === f);
+      });
+      document.getElementById("agenda-uitleg").textContent = uitleg[f];
+    });
+  });
+})();
+</script>

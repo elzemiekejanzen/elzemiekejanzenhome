@@ -1045,3 +1045,52 @@ section[id] { scroll-margin-top: 92px; }
   gap: 1rem;
 }
 .linkhub__link { width: 100%; text-align: center; }
+
+/* agenda: filter en overzicht van sessies, mini-retraites en trajecten */
+.agenda { max-width: 820px; }
+.agenda__filters { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; }
+.agenda__chip {
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--tekst);
+  background: transparent;
+  border: 1px solid var(--lijn);
+  border-radius: 999px;
+  padding: 0.45em 1.1em;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.agenda__chip:hover { border-color: var(--goud); }
+.agenda__chip.is-active { background: var(--klei); border-color: var(--klei); color: var(--parel); }
+.agenda__uitleg { text-align: center; color: var(--tekst-zacht); font-size: 0.95rem; margin: 1rem 0 1.5rem; }
+.agenda-rij {
+  display: grid;
+  grid-template-columns: 84px minmax(0, 1fr);
+  gap: 0.5rem 1.4rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--lijn);
+}
+.agenda-rij:last-child { border-bottom: 1px solid var(--lijn); }
+.agenda-rij[hidden] { display: none; }
+.agenda-rij__datum { text-align: center; line-height: 1.1; color: var(--linnen); }
+.agenda-rij__datum b { display: block; font-family: var(--ff-kop); font-size: 2rem; font-weight: 600; }
+.agenda-rij__datum span { font-size: 0.85rem; color: var(--tekst-zacht); }
+.agenda-rij__datum .agenda-rij__wanneer { font-weight: 700; font-size: 0.9rem; color: var(--goud); line-height: 1.3; display: block; }
+.agenda-rij__tekst h3 { font-size: 1.25rem; margin: 0.3rem 0 0.2rem; }
+.agenda-rij__tekst p { margin: 0.3rem 0 0; color: var(--tekst-zacht); }
+.agenda-rij__tekst .agenda-rij__meta { color: var(--tekst); font-size: 0.95rem; }
+.agenda-rij__label {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 0.15em 0.8em;
+}
+.agenda-rij__label--sessie { background: rgba(60, 83, 66, 0.14); color: var(--mos-diep); }
+.agenda-rij__label--retraite { background: rgba(185, 134, 62, 0.2); color: #6B4A18; }
+.agenda-rij__label--traject { background: rgba(124, 46, 54, 0.12); color: var(--klei-diep); }
+.agenda-rij__link { grid-column: 2; font-size: 0.95rem; font-weight: 700; }
+@media (max-width: 560px) {
+  .agenda-rij { grid-template-columns: 62px minmax(0, 1fr); gap: 0.4rem 1rem; }
+  .agenda-rij__datum b { font-size: 1.6rem; }
+}

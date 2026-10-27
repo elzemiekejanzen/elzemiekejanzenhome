@@ -1,0 +1,92 @@
+[
+  {
+    "type": "sessie",
+    "label": "Praktijkdag",
+    "titel": "Praktijkdag Rijswijk",
+    "omschrijving": "Een dag met sessies in mijn praktijkruimte in Rijswijk. Er zijn nog 2 plekken beschikbaar.",
+    "datum": "2026-11-07",
+    "plek": "Geestbrugkade 32, Rijswijk",
+    "beschikbaarheid": "nog 2 plekken",
+    "aanmelden": true
+  },
+  {
+    "type": "sessie",
+    "titel": "Unwind & Release (evening yoga)",
+    "omschrijving": "Een rustige avondles voor iedereen, ook als je nog nooit yoga hebt gedaan. We bewegen langzaam en blijven langer in zachte, ondersteunde houdingen.",
+    "datum": "2026-11-11",
+    "tijd": "19:30 - 20:30",
+    "plek": "Nala Village, Warnsveld",
+    "aanmelden": true,
+    "tarief": "€10 incl. btw"
+  },
+  {
+    "type": "sessie",
+    "titel": "Unwind & Release (evening yoga)",
+    "omschrijving": "Een rustige avondles voor iedereen, ook als je nog nooit yoga hebt gedaan. We bewegen langzaam en blijven langer in zachte, ondersteunde houdingen.",
+    "datum": "2026-11-18",
+    "tijd": "19:30 - 20:30",
+    "plek": "Nala Village, Warnsveld",
+    "aanmelden": true,
+    "tarief": "€10 incl. btw"
+  },
+  {
+    "type": "sessie",
+    "titel": "Deep Rest",
+    "omschrijving": "Een uur op een matje, onder een deken, met je ogen dicht. Met mijn stem begeleid ik je stap voor stap in diepe ontspanning, gebaseerd op yoga nidra. Je hoeft niets te kunnen.",
+    "datum": "2026-11-20",
+    "tijd": "19:30 - 20:30",
+    "plek": "Nala Village, Warnsveld",
+    "aanmelden": true,
+    "tarief": "€10 incl. btw"
+  },
+  {
+    "type": "sessie",
+    "titel": "Mindful Nature Walk",
+    "omschrijving": "Een rustige, begeleide wandeling in de natuur rond Nala Village. Je loopt een stuk in stilte, we staan onderweg even stil voor een korte meditatie en je krijgt een paar reflectievragen mee. Je hoeft niets te kunnen of te delen.",
+    "datum": "2026-11-21",
+    "tijd": "10:00 - 11:00",
+    "plek": "Nala Village, Warnsveld",
+    "aanmelden": true,
+    "tarief": "€10 incl. btw"
+  },
+  {
+    "type": "sessie",
+    "titel": "Unwind & Release (evening yoga)",
+    "omschrijving": "Een rustige avondles voor iedereen, ook als je nog nooit yoga hebt gedaan. We bewegen langzaam en blijven langer in zachte, ondersteunde houdingen.",
+    "datum": "2026-11-25",
+    "tijd": "19:30 - 20:30",
+    "plek": "Nala Village, Warnsveld",
+    "aanmelden": true,
+    "tarief": "€10 incl. btw"
+  },
+  {
+    "type": "traject",
+    "titel": "Groepstraject",
+    "omschrijving": "Zes maanden in een kleine groep, met live dagen, 1-op-1 sessies en masterclasses. Tarief volgt.",
+    "wanneer": "Start 1 mrt 2027",
+    "sorteer": "2027-03-01",
+    "plek": "Locatie volgt",
+    "link": "/groepstraject/",
+    "linkTekst": "Meer over het groepstraject"
+  },
+  {
+    "type": "retraite",
+    "titel": "Mini-retraites",
+    "omschrijving": "Een weekend bij Nala Village. Je boekt zelf je verblijf bij Nala en verdiept je met workshops rond het thema van de retraite. Thema en data volgen.",
+    "wanneer": "Binnenkort",
+    "sorteer": "2099-01-01",
+    "plek": "Nala Village, Warnsveld",
+    "link": "/#boeking",
+    "linkTekst": "Houd me op de hoogte"
+  },
+  {
+    "type": "traject",
+    "titel": "1-op-1 begeleiding",
+    "omschrijving": "Zes maanden begeleiding, die begint met een gratis kennismaking en de Lichaamslezing.",
+    "wanneer": "Doorlopend",
+    "sorteer": "2099-12-31",
+    "plek": "Zutphen of Rijswijk",
+    "link": "/traject/",
+    "linkTekst": "Meer over het traject"
+  }
+]
